@@ -1,0 +1,324 @@
+
+html{
+    font-family: 'Open Sans',sans-serif;
+    background: whitesmoke;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+hr{
+    background: grey;
+}
+#container{
+    position: relative;
+    display: flex;
+}
+#profile{
+    flex: 15%;
+    display: block;
+    position: relative;
+    margin: 5% 2% 0 10%;
+    width: 100%;
+    height: 100%;
+    max-height: 27rem;
+}
+#info-cards{
+    flex: 55%;
+    display: block;
+    margin-top: 5%;
+    margin-right: 10%;
+    width: 100%;
+    height: 100%;
+}
+#image{
+    position: relative;
+    overflow: hidden;
+}
+#image,#profile-photo{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+#image > a{
+    position: absolute;
+    top:0;
+    left:0;
+    background: rgba(0,0,0,0.5) !important;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+#image > a > i{
+    -webkit-text-stroke: 1px #ffffffdd;
+    padding: 40%;
+}
+#image:hover a{
+    display: block;
+}
+#name{
+    font-size: 23px !important;
+    line-height: 20px !important;
+}
+#about,.card > ul > li{
+    padding: 0 0 0 15px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+#about{
+    font-size: 20px !important;
+    padding: 0 !important;
+}
+.about-text{
+    font-size: 14px !important;
+    font-weight: normal !important;
+    color: #333;
+    line-height: 1.5;
+    margin-top: 5px !important;
+    padding-left: 55px;
+}
+#name, #about > p{
+    font-weight: bolder;
+    font-family: 'Open Sans', sans-serif;
+}
+#email{
+    font-size: 15px !important;
+    font-weight: bold !important;
+    font-family: 'Cutive Mono',monospace;
+}
+#college,#email,#year-graduation,#education,#more-about,#telephone,#fax{
+    color: #555;
+    font-size: 13.5px;
+}
+strong,span{
+    color: black;
+    font-size: 16px;
+}
+#social-links,#about{
+    display: inline-block;
+}
+#social-links{
+    margin-bottom: 12px;
+}
+#social-links a{
+    margin: 0 10px;
+}
+#edit-intro{
+    display: block;
+    font-size: 1em;
+    color:#097bbf;
+    font-family: 'Nunito', sans-serif;
+}
+.fab{
+    font-size: 1.1em;
+}
+.fab,.fas{
+    color: whitesmoke;
+}
+#about > a{
+    top: 4px;
+    right: 8px;
+}
+.edit{
+    top: 19px;
+    right: 10px;
+}
+#about > a, .edit{
+    position: absolute;
+    font-size: 15px !important;
+}
+.stroke-transparent {
+ -webkit-text-stroke: 1px #000;
+ -webkit-text-fill-color: transparent;
+}
+.blue{
+    color: #097bbf !important;
+    font-size: 13px;
+}
+.stroke-transparent-blue {
+ -webkit-text-stroke: 1px #097bbf;
+ -webkit-text-fill-color: transparent;
+}
+.card{
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
+    border-radius: 20px;
+    overflow-x: hidden;
+    margin-bottom: 30px;
+    padding: 15px 30px 30px 30px;
+    background-color: #fff;
+}
+.card:hover{
+    box-shadow: 5px 5px 5px rgb(236, 236, 236);
+}
+.card > p{
+    color: #0e141e;
+    font-weight: bolder;
+    font-size: 18px;
+    line-height: 2;
+}
+.card > p > i{
+    font-size: 18px;
+}
+.card > a{
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0;
+    margin-left: 25px;
+    padding: 0;
+    border: 0;
+    height: auto;
+    background: transparent;
+    color: #097bbf;
+    outline: none;
+    cursor: pointer;
+}
+.card > ul{
+    list-style-type: none;
+}
+.tags{
+    font-size: 17px;
+    font-weight: bolder;
+}
+.tags ~ a{
+    display: none !important;
+}
+.tags span{
+    font-size: 14px;
+    font-weight: normal;
+    color: #0e141e;
+}
+.tags span span{
+    color: #738f93;
+}
+.work-stack{
+    margin: 5px 0 10px 20px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+.badge{
+    font-size: 11px !important;
+    color: #097bbf !important;
+    background: #e8f4fa;
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-weight: normal !important;
+}
+.skills-compact{
+    padding: 0 15px;
+}
+.skills-compact p{
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+.skills-compact strong{
+    font-size: 14px;
+}
+.skill-icon{
+    width: 20px;
+    text-align: center;
+    display: inline-block;
+    color: #555 !important;
+    -webkit-text-fill-color: #555 !important;
+    -webkit-text-stroke: 0 !important;
+    font-size: 16px;
+    margin-right: 5px;
+}
+.work-details{
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 5px 0 10px 0;
+}
+.work-details li{
+    font-size: 13px;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+}
+.work-link{
+    color: #097bbf !important;
+}
+@media print{
+    html{
+        background: white;
+        font-size: 11px;
+    }
+    #container{
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    #profile{
+        margin: 10px 10px 0 10px;
+        flex: 20%;
+    }
+    #info-cards{
+        margin: 10px 10px 0 0;
+        flex: 75%;
+    }
+    .card{
+        box-shadow: none;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        padding: 8px 15px 12px 15px;
+        page-break-inside: avoid;
+    }
+    .card > p{
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+    }
+    .card > ul{
+        margin: 5px 0;
+        padding-left: 25px;
+    }
+    .card > ul > li{
+        padding: 2px 0 2px 10px;
+    }
+    .tags{
+        font-size: 13px;
+        margin: 3px 0;
+    }
+    .tags span{
+        font-size: 12px;
+    }
+    .about-text{
+        font-size: 12px !important;
+        padding-left: 30px;
+        margin: 3px 0 !important;
+    }
+    .work-details li{
+        font-size: 11px;
+    }
+    #name{
+        font-size: 18px !important;
+    }
+    #social-links{
+        margin-bottom: 5px;
+    }
+    .stroke-transparent, .stroke-transparent-blue{
+        -webkit-text-fill-color: initial;
+    }
+}
+@media screen and (max-width:1090px) {
+    #profile{
+        margin-left: 5%;
+    }
+}
+@media screen and (max-width:850px){
+    #container{
+        display: block;
+    }
+    #profile{
+        width: 90%;
+    }
+    .card{
+        margin: 0 5%;
+        margin-bottom: 30px;
+    }
+}

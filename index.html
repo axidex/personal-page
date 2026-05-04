@@ -1,0 +1,103 @@
+<head>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Dolgintsev Stepan — Software Engineer</title>
+    <style>
+
+    </style>
+
+</head>
+
+<div id="inner-nav"></div>
+<div id="container">
+    <div id="profile">
+        <p id="name">Dolgintsev Stepan<br><span id="email">stepworm@yandex.ru</span></p>
+        <div id="social-links"><a href="https://github.com/axidex"><i
+                    class="fab fa-github stroke-transparent"></i></a></i></div>
+        <div id="social-links"><a href="https://leetcode.com/axidex/"><i class="fa-solid fa-code"></i></a></i></div>
+        <div id="social-links"><a href="https://t.me/axidex"><i class="fa-brands fa-telegram"></i></a></div>
+        <hr width="100%">
+        <div id="about">
+            <p style="display:inline;">Education</p>
+        </div>
+        <p id="year-graduation">Year of Graduation<br><strong>2026</strong></p>
+        <p id="education"><strong>MIREA -- Russian Technological University</strong><br>Information Security (Specialist)
+        </p>
+    </div>
+    <div id="info-cards">
+
+        <div class="card">
+            <p><i class="fas fa-user stroke-transparent"></i>&nbsp;&nbsp;&nbsp;About</p>
+            <p class="about-text">Hi 👋, I'm Stepan, currently working as a Software Engineer at Yandex.<br>Started coding, got hooked on building complex systems. But the real addiction? That "aha!" moment when users tell me my app just saved them 3 hours of work. Now I chase that high every single day.<br><br>🌍 Open to worldwide remote opportunities.</p>
+        </div>
+
+        <div class="card">
+            <p><i class="fas fa-graduation-cap stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Work</p>
+            <ul>
+                <li>
+                    <p class="tags">Yandex<br><span>Software Engineer · Full-time · Hybrid <span>Jun 2025 - Present</span></span></p>
+                    <ul class="work-details">
+                        <li>Developing AppSec features at <a href="https://sourcecraft.dev" class="work-link">SourceCraft</a></li>
+                    </ul>
+                    <div class="work-stack"><span class="badge">Go</span><span class="badge">Kotlin</span><span class="badge">Quarkus</span><span class="badge">Hibernate</span><span class="badge">MongoDB</span><span class="badge">PostgreSQL</span><span class="badge">Helm</span><span class="badge">TDD</span><span class="badge">DDD</span></div>
+                </li>
+                <li>
+                    <p class="tags">Sberbank<br><span>DevSecOps · Full-time · On-site <span>Aug 2023 - May 2025</span></span></p>
+                    <ul class="work-details">
+                        <li>Designed and implemented a secret scanning service integrated into CI/CD (~6,500 scans/week)</li>
+                        <li>Developed and launched a SAST service based on Semgrep and CodeQL</li>
+                        <li>Designed and developed an API Fuzzing tool for RESTful APIs</li>
+                    </ul>
+                    <div class="work-stack"><span class="badge">Go</span><span class="badge">Python</span><span class="badge">Groovy</span><span class="badge">Gin</span><span class="badge">FastAPI</span><span class="badge">GORM</span><span class="badge">SQLAlchemy</span><span class="badge">gRPC</span><span class="badge">Kafka</span><span class="badge">PostgreSQL</span><span class="badge">Helm</span><span class="badge">Istio</span><span class="badge">Prometheus</span><span class="badge">Grafana</span><span class="badge">Tempo</span></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <p><i class="fas fa-graduation-cap stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Skills</p>
+            <ul>
+                <li>
+                    <p class="tags"><i class="fa-solid fa-laptop-code skill-icon"></i> Go, Kotlin, Python<br><span>Gin, FastAPI, Quarkus, GORM, Hibernate, SQLAlchemy, gRPC</span></p>
+                </li>
+                <li>
+                    <p class="tags"><i class="fa-brands fa-docker skill-icon"></i> Infrastructure<br><span>K8s, Helm, OpenShift, Docker, Istio, Kafka, PostgreSQL, MongoDB, S3, Redis</span></p>
+                </li>
+                <li>
+                    <p class="tags"><i class="fa-solid fa-chart-line skill-icon"></i> Observability<br><span>Prometheus, Grafana, Tempo</span></p>
+                </li>
+                <li>
+                    <p class="tags"><i class="fa-solid fa-shield-halved skill-icon"></i> Security<br><span>SAST (Semgrep, CodeQL, Checkmarx), Secret Scanning (Gitleaks, DeepSecrets, Kingfisher), SCA, API Fuzzing</span></p>
+                </li>
+                <li>
+                    <p class="tags"><i class="fa-solid fa-code skill-icon"></i> Architecture<br><span>DDD, TDD, SOLID, ACID, BASE</span></p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Projects</p>
+            <ul>
+                <li>
+                    <p class="tags">Gradle License Compliance Plugin<br><span>Gradle plugin that scans dependencies, reads license info from POM files, and verifies against a defined policy. Inspired by go-bouncer <span>2026</span></span>
+                    <a id="edit-intro" href="https://github.com/axidex/gradle-licenses">source</a></p>
+                </li>
+                <li>
+                    <p class="tags">Kotlin vs Golang — benchmark<br><span>CRUD performance comparison of Quarkus (Kotlin) vs Gin (Go) with PostgreSQL, Prometheus and Grafana <span>2026</span></span>
+                    <a id="edit-intro" href="https://github.com/axidex/kotlin-golang-benchmark">source</a></p>
+                </li>
+                <li>
+                    <p class="tags">ECIES Educational Application<br><span>Interactive tool for learning Elliptic Curve Integrated Encryption Scheme <span>2024</span></span>
+                    <a id="edit-intro" href="https://github.com/axidex/elliptic">source</a></p>
+                </li>
+                <li>
+                    <p class="tags">Secret Scanning Engine<br><span>Engine for searching secrets and credentials in source code repositories <span>2023</span></span>
+                    <a id="edit-intro" href="https://github.com/axidex/ss-engine">source</a></p>
+                </li>
+                <li>
+                    <p class="tags">Retouching Module<br><span>Implementation of FabSoften paper — face beautification via dynamic skin smoothing. Python module written in C++ <span>2022</span></span>
+                    <a id="edit-intro" href="https://github.com/axidex/Retouching-module">source</a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
