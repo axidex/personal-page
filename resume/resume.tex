@@ -1,0 +1,142 @@
+% Stepan Dolgintsev — CV
+% Build:  pdflatex resume.tex     (or drop into Overleaf as-is)
+% Only stock TeX Live packages — no fontawesome, no custom class, no shell-escape.
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,allcolors=accent]{hyperref}
+
+\definecolor{accent}{HTML}{0A6BA6}
+\definecolor{muted}{HTML}{5F7478}
+
+\hypersetup{
+  pdftitle={Stepan Dolgintsev --- Software Engineer},
+  pdfauthor={Stepan Dolgintsev},
+  pdfsubject={CV}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}
+  {\large\bfseries\color{accent}}{}{0em}{}
+  [\vspace{-0.55em}{\color{accent}\rule{\linewidth}{0.7pt}}]
+\titlespacing*{\section}{0pt}{0.7ex}{0.45ex}
+
+% \role{where}{what}{when}
+\newcommand{\role}[3]{%
+  \vspace{0.22em}%
+  \textbf{#1}\hfill{\small\color{muted}#3}\\%
+  {\small\itshape #2}\par\vspace{0.1em}}
+
+% \project{name}{year}{description}{url}
+\newcommand{\project}[4]{%
+  \vspace{0.16em}%
+  \textbf{#1}\hfill{\small\color{muted}#2}\\%
+  {\small #3\ \href{#4}{source}}\par}
+
+\newcommand{\stack}[1]{\vspace{0.08em}{\footnotesize\color{muted}#1}\par}
+
+\newenvironment{bullets}
+  {\begin{itemize}[leftmargin=1.1em,itemsep=0.05em,parsep=0pt,topsep=0.12em,label=\textbullet]\small}
+  {\end{itemize}}
+
+\begin{document}
+
+%% ---------------------------------------------------------------- header
+\begin{center}
+  {\LARGE\bfseries Stepan Dolgintsev}\\[0.3em]
+  {\large Software Engineer}\\[0.5em]
+  {\small
+    \href{mailto:stepandolgintsev@gmail.com}{stepandolgintsev@gmail.com} \textbar{}
+    \href{https://github.com/axidex}{github.com/axidex} \textbar{}
+    \href{https://t.me/axidex}{t.me/axidex} \textbar{}
+    \href{https://leetcode.com/axidex/}{leetcode.com/axidex} \textbar{}
+    \href{https://axidex.github.io/personal-page/}{axidex.github.io/personal-page}
+  }
+\end{center}
+\vspace{0.3em}
+
+%% ---------------------------------------------------------------- summary
+\section*{Summary}
+Software Engineer building AppSec features at Yandex SourceCraft. Background in DevSecOps:
+secret scanning, SAST and API fuzzing at production scale. Upstream contributor to Trivy,
+Grype and Syft. Open to worldwide remote opportunities.
+
+%% ---------------------------------------------------------------- experience
+\section*{Experience}
+
+\role{Yandex}{Software Engineer \textperiodcentered{} Full-time \textperiodcentered{} Hybrid}{Jun 2025 --- Present}
+\begin{bullets}
+  \item Developing AppSec features at \href{https://sourcecraft.dev}{SourceCraft}, Yandex's developer platform.
+\end{bullets}
+\stack{Go \textperiodcentered{} Kotlin \textperiodcentered{} Quarkus \textperiodcentered{} Hibernate \textperiodcentered{} MongoDB \textperiodcentered{} PostgreSQL \textperiodcentered{} Helm \textperiodcentered{} TDD \textperiodcentered{} DDD}
+
+\role{Sberbank}{DevSecOps \textperiodcentered{} Full-time \textperiodcentered{} On-site}{Aug 2023 --- May 2025}
+\begin{bullets}
+  \item Designed and implemented a secret scanning service integrated into CI/CD (\textasciitilde{}6{,}500 scans/week).
+  \item Developed and launched a SAST service based on Semgrep and CodeQL.
+  \item Designed and developed an API fuzzing tool for RESTful APIs.
+\end{bullets}
+\stack{Go \textperiodcentered{} Python \textperiodcentered{} Groovy \textperiodcentered{} Gin \textperiodcentered{} FastAPI \textperiodcentered{} GORM \textperiodcentered{} SQLAlchemy \textperiodcentered{} gRPC \textperiodcentered{} Kafka \textperiodcentered{} PostgreSQL \textperiodcentered{} Helm \textperiodcentered{} Istio \textperiodcentered{} Prometheus \textperiodcentered{} Grafana \textperiodcentered{} Tempo}
+
+%% ---------------------------------------------------------------- open source
+\section*{Open Source}
+Merged upstream contributions to the supply-chain security scanners I work with daily ---
+\href{https://github.com/aquasecurity/trivy/pulls?q=is\%3Apr+author\%3Aaxidex}{\textbf{Trivy}} \textcolor{muted}{(37k stars)},
+\href{https://github.com/anchore/grype/pulls?q=is\%3Apr+author\%3Aaxidex}{\textbf{Grype}} \textcolor{muted}{(12k)},
+\href{https://github.com/anchore/syft/pulls?q=is\%3Apr+author\%3Aaxidex}{\textbf{Syft}} \textcolor{muted}{(9k)} ---
+covering SARIF reporting (CVSS vectors, PURLs, fallback descriptions) and Go module path parsing.
+
+%% ---------------------------------------------------------------- skills
+\section*{Skills}
+\begin{bullets}
+  \item \textbf{Languages \& Frameworks} --- Go, Kotlin, Python; Gin, FastAPI, Quarkus, GORM, Hibernate, SQLAlchemy, gRPC.
+  \item \textbf{Infrastructure} --- Kubernetes, Helm, OpenShift, Docker, Istio, Kafka, PostgreSQL, MongoDB, S3, Redis.
+  \item \textbf{Observability} --- Prometheus, Grafana, Tempo.
+  \item \textbf{Security} --- SAST (Semgrep, CodeQL, Checkmarx), secret scanning (Gitleaks, DeepSecrets, Kingfisher), SCA (Trivy, Grype, Syft), API fuzzing.
+  \item \textbf{Architecture} --- DDD, TDD, SOLID, ACID, BASE.
+\end{bullets}
+
+%% ---------------------------------------------------------------- projects
+\section*{Projects}
+
+\project{vercraft-go}{2026}
+  {Language-agnostic CLI that derives a SemVer version straight from git history and \texttt{release/} branches --- no tag zoo, no per-language build plugin. Go port of \href{https://github.com/orchestr7/vercraft}{orchestr7/vercraft}.}
+  {https://github.com/axidex/vercraft-go}
+\stack{Go \textperiodcentered{} git \textperiodcentered{} SemVer \textperiodcentered{} CI/CD}
+
+\project{Gradle License Compliance Plugin}{2026}
+  {Gradle plugin that scans dependencies, reads license info from POM files and verifies it against a defined policy. Published to Maven Central.}
+  {https://github.com/axidex/gradle-licenses}
+\stack{Kotlin \textperiodcentered{} Gradle \textperiodcentered{} Maven Central}
+
+\project{Kotlin vs Golang --- benchmark}{2026}
+  {CRUD performance comparison of Quarkus (Kotlin) vs Gin (Go) with PostgreSQL, Prometheus and Grafana.}
+  {https://github.com/axidex/kotlin-golang-benchmark}
+
+\project{ECIES Educational Application}{2024}
+  {Interactive tool for learning the Elliptic Curve Integrated Encryption Scheme.}
+  {https://github.com/axidex/elliptic}
+
+\project{Secret Scanning Engine}{2023}
+  {Engine for searching secrets and credentials in source code repositories.}
+  {https://github.com/axidex/ss-engine}
+
+\project{Retouching Module}{2022}
+  {Implementation of the FabSoften paper --- face beautification via dynamic skin smoothing. Python module written in C++.}
+  {https://github.com/axidex/Retouching-module}
+
+%% ---------------------------------------------------------------- education
+\section*{Education}
+\role{MIREA --- Russian Technological University}{Information Security (Specialist)}{Graduated 2026}
+
+\end{document}

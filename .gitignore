@@ -1,3 +1,11 @@
 .vscode/
 tailwind/
 *.zip
+
+# LaTeX build artifacts
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.xdv
+resume/*.fls
+resume/*.fdb_latexmk
