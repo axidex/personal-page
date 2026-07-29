@@ -1,361 +1,525 @@
+:root {
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --text: #0e141e;
+    --body: #333333;
+    --dim: #5f7478;
+    --accent: #0a6ba6;
+    --accent-bg: #e8f4fa;
+    --line: #dcdcdc;
+    --shadow: 0 3px 10px rgba(0, 0, 0, .08);
+    --shadow-hover: 0 6px 20px rgba(0, 0, 0, .13);
+}
 
-html{
-    font-family: 'Open Sans',sans-serif;
-    background: whitesmoke;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #12161c;
+        --card: #1a1f27;
+        --text: #e6e9ee;
+        --body: #c2c8d0;
+        --dim: #8b98a5;
+        --accent: #5cb3f0;
+        --accent-bg: #123040;
+        --line: #2b323c;
+        --shadow: 0 3px 10px rgba(0, 0, 0, .4);
+        --shadow-hover: 0 6px 20px rgba(0, 0, 0, .55);
+    }
 }
-a{
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--body);
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+a {
     text-decoration: none;
-    color: black;
+    color: var(--accent);
 }
-hr{
-    background: grey;
+
+a:hover {
+    text-decoration: underline;
 }
-#container{
-    position: relative;
-    display: flex;
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 18px 0;
 }
-#profile{
-    flex: 15%;
-    display: block;
-    position: relative;
-    margin: 5% 2% 0 10%;
-    width: 100%;
-    height: 100%;
-    max-height: 27rem;
+
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .9em;
 }
-#info-cards{
-    flex: 55%;
-    display: block;
-    margin-top: 5%;
-    margin-right: 10%;
-    width: 100%;
-    height: 100%;
-}
-#image{
-    position: relative;
+
+/* the sprite is a definitions-only <svg>: kept out of layout, still referencable by <use> */
+.sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
     overflow: hidden;
 }
-#image,#profile-photo{
-    position: relative;
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
+
+.icon {
+    width: 1em;
+    height: 1em;
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
-#image > a{
-    position: absolute;
-    top:0;
-    left:0;
-    background: rgba(0,0,0,0.5) !important;
-    height: 100%;
-    width: 100%;
-    display: none;
+
+.icon-brand {
+    fill: currentColor;
+    stroke: none;
 }
-#image > a > i{
-    -webkit-text-stroke: 1px #ffffffdd;
-    padding: 40%;
+
+.print-btn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font: inherit;
+    font-size: 13px;
+    color: var(--accent);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 7px 12px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
 }
-#image:hover a{
-    display: block;
+
+.print-btn:hover {
+    box-shadow: var(--shadow-hover);
 }
-#name{
-    font-size: 23px !important;
-    line-height: 20px !important;
+
+#container {
+    display: flex;
+    gap: 2%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4% 6% 3rem;
 }
-#about,.card > ul > li{
-    padding: 0 0 0 15px;
-    position: relative;
+
+#profile {
+    flex: 0 0 22%;
+    align-self: flex-start;
+    position: sticky;
+    top: 2rem;
+}
+
+#info-cards {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+#name {
+    font-size: 23px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 4px;
+}
+
+#email {
     display: inline-block;
-    width: 100%;
-}
-#about{
-    font-size: 20px !important;
-    padding: 0 !important;
-}
-.about-text{
-    font-size: 14px !important;
-    font-weight: normal !important;
-    color: #333;
-    line-height: 1.5;
-    margin-top: 5px !important;
-    padding-left: 55px;
-}
-#name, #about > p{
-    font-weight: bolder;
-    font-family: 'Open Sans', sans-serif;
-}
-#email{
-    font-size: 15px !important;
-    font-weight: bold !important;
-    font-family: 'Cutive Mono',monospace;
-}
-#college,#email,#year-graduation,#education,#more-about,#telephone,#fax{
-    color: #555;
-    font-size: 13.5px;
-}
-strong,span{
-    color: black;
-    font-size: 16px;
-}
-#social-links,#about{
-    display: inline-block;
-}
-#social-links{
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 14px;
+    font-weight: 600;
     margin-bottom: 12px;
 }
-#social-links a{
-    margin: 0 10px;
+
+.social-links {
+    display: flex;
+    gap: 16px;
+    font-size: 20px;
+    color: var(--text);
 }
-#edit-intro{
-    display: block;
-    font-size: 1em;
-    color:#097bbf;
-    font-family: 'Nunito', sans-serif;
+
+.social-links a {
+    display: flex;
+    color: inherit;
 }
-.fab{
-    font-size: 1.1em;
+
+.social-links a:hover {
+    color: var(--accent);
 }
-.fab,.fas{
-    color: whitesmoke;
-}
-#about > a{
-    top: 4px;
-    right: 8px;
-}
-.edit{
-    top: 19px;
-    right: 10px;
-}
-#about > a, .edit{
-    position: absolute;
-    font-size: 15px !important;
-}
-.stroke-transparent {
- -webkit-text-stroke: 1px #000;
- -webkit-text-fill-color: transparent;
-}
-.blue{
-    color: #097bbf !important;
-    font-size: 13px;
-}
-.stroke-transparent-blue {
- -webkit-text-stroke: 1px #097bbf;
- -webkit-text-fill-color: transparent;
-}
-.card{
-    box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
-    border-radius: 20px;
-    overflow-x: hidden;
-    margin-bottom: 30px;
-    padding: 15px 30px 30px 30px;
-    background-color: #fff;
-}
-.card:hover{
-    box-shadow: 5px 5px 5px rgb(236, 236, 236);
-}
-.card > p{
-    color: #0e141e;
-    font-weight: bolder;
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 18px;
-    line-height: 2;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 8px;
 }
-.card > p > i{
-    font-size: 18px;
-}
-.card > a{
-    font-weight: 400;
-    font-size: 15px;
+
+.edu-line {
+    font-size: 13.5px;
+    line-height: 1.5;
     margin: 0;
-    margin-left: 25px;
-    padding: 0;
-    border: 0;
-    height: auto;
-    background: transparent;
-    color: #097bbf;
-    outline: none;
-    cursor: pointer;
 }
-.card > ul{
-    list-style-type: none;
-}
-.tags{
-    font-size: 17px;
-    font-weight: bolder;
-}
-.tags ~ a{
-    display: none !important;
-}
-.tags span{
+
+.edu-line strong {
+    color: var(--text);
     font-size: 14px;
-    font-weight: normal;
-    color: #0e141e;
 }
-.tags span span{
-    color: #738f93;
+
+.dim {
+    color: var(--dim);
 }
-.work-stack{
-    margin: 5px 0 10px 20px;
-    padding: 0;
+
+.card {
+    box-shadow: var(--shadow);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    padding: 18px 30px 26px;
+    background: var(--card);
+    transition: box-shadow .2s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.card h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    font-weight: 800;
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+
+.card>ul>li+li {
+    margin-top: 14px;
+}
+
+.about-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 4px;
+}
+
+/* <br> does the line break here, so .tags stays a plain block — no flex, no blockified spans */
+.tags {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.45;
+    margin: 0;
+}
+
+.tags span {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--body);
+}
+
+.tags .dim {
+    color: var(--dim);
+}
+
+.skill-icon {
+    font-size: 16px;
+    color: var(--dim);
+    vertical-align: -2px;
+    margin-right: 4px;
+}
+
+/* needs .card to outrank `.card ul {list-style:none}` above */
+.card .work-details {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 5px 0 10px;
+}
+
+.work-details li {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.work-details li+li {
+    margin-top: 3px;
+}
+
+.work-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
+    margin: 6px 0 8px 20px;
 }
-.badge{
-    font-size: 11px !important;
-    color: #097bbf !important;
-    background: #e8f4fa;
+
+.badge {
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-bg);
     border-radius: 4px;
     padding: 2px 7px;
-    font-weight: normal !important;
+    font-weight: 400;
 }
-.skills-compact{
-    padding: 0 15px;
+
+.oss-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
 }
-.skills-compact p{
+
+.oss {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
     font-size: 14px;
-    line-height: 1.8;
+    font-weight: 700;
+    color: var(--text);
+    background: var(--accent-bg);
+    border-radius: 6px;
+    padding: 4px 11px;
+}
+
+.oss:hover {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+.oss .stars {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--dim);
     margin: 0;
 }
-.skills-compact strong{
+
+/* stack badges and the source link share one row */
+.proj-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px 12px;
+    margin: 6px 0 0 20px;
+}
+
+.proj-meta .work-stack {
+    margin: 0;
+}
+
+.source-link {
     font-size: 14px;
+    margin-left: auto;
 }
-.skill-icon{
-    width: 20px;
-    text-align: center;
-    display: inline-block;
-    color: #555 !important;
-    -webkit-text-fill-color: #555 !important;
-    -webkit-text-stroke: 0 !important;
-    font-size: 16px;
-    margin-right: 5px;
+
+@media screen and (max-width: 900px) {
+    #container {
+        display: block;
+        /* top padding clears the fixed print button */
+        padding: 60px 5% 2rem;
+    }
+
+    #profile {
+        position: static;
+        margin-bottom: 24px;
+    }
+
+    .card {
+        padding: 16px 20px 20px;
+    }
+
+    .card ul {
+        padding-left: 0;
+    }
+
+    .work-stack,
+    .proj-meta {
+        margin-left: 0;
+    }
 }
-.work-details{
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 5px 0 10px 0;
-}
-.work-details li{
-    font-size: 13px;
-    color: #333;
-    line-height: 1.6;
-    padding: 0;
-}
-.work-link{
-    color: #097bbf !important;
-}
-@media print{
-    html{
-        background: white;
+
+/* The page doubles as the CV — Ctrl+P / "Save as PDF" produces a compact A4 sheet. */
+@media print {
+    :root {
+        --bg: #fff;
+        --card: #fff;
+        --text: #000;
+        --body: #222;
+        --dim: #555;
+        --accent: #0a5f93;
+        --accent-bg: #eef6fb;
+        --line: #ccc;
+        --shadow: none;
+        --shadow-hover: none;
+    }
+
+    /* keep the badge / PR-state backgrounds in the PDF */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    @page {
+        margin: 10mm;
+    }
+
+    html {
+        background: #fff;
         font-size: 10px;
     }
-    #container{
+
+    .print-btn {
+        display: none;
+    }
+
+    #container {
         display: flex;
+        max-width: none;
         margin: 0;
         padding: 0;
+        gap: 12px;
     }
-    #profile{
-        margin: 5px 5px 0 5px;
-        flex: 18%;
+
+    #profile {
+        position: static;
+        flex: 0 0 21%;
     }
-    #info-cards{
-        margin: 5px 5px 0 0;
-        flex: 78%;
-    }
-    .card{
-        box-shadow: none;
-        border: 1px solid #ddd;
+
+    .card {
+        border: 1px solid var(--line);
         border-radius: 6px;
-        margin-bottom: 4px;
-        padding: 4px 10px 6px 10px;
+        margin-bottom: 3px;
+        padding: 4px 10px 5px;
+        break-inside: avoid;
     }
-    .card > p{
+
+    .card h2 {
         font-size: 12px;
-        line-height: 1.3;
-        margin: 0;
+        margin-bottom: 3px;
+        gap: 6px;
     }
-    .card > p > i{
-        font-size: 12px;
+
+    .card ul {
+        padding-left: 8px;
     }
-    .card > ul{
-        margin: 2px 0;
-        padding-left: 20px;
+
+    .card>ul>li+li {
+        margin-top: 4px;
     }
-    .card > ul > li{
-        padding: 1px 0 1px 5px;
+
+    #name {
+        font-size: 15px;
     }
-    .tags{
+
+    #email {
         font-size: 11px;
-        margin: 2px 0;
+        margin-bottom: 6px;
     }
-    .tags span{
+
+    .social-links {
+        font-size: 13px;
+        gap: 10px;
+    }
+
+    .section-title {
+        font-size: 12px;
+    }
+
+    .edu-line,
+    .about-text,
+    .tags {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .edu-line strong {
+        font-size: 11px;
+    }
+
+    .tags {
+        font-size: 11px;
+    }
+
+    .tags span {
         font-size: 10px;
     }
-    .about-text{
-        font-size: 10px !important;
-        padding-left: 20px;
-        margin: 2px 0 !important;
-        line-height: 1.3 !important;
+
+    .skill-icon {
+        font-size: 11px;
+        vertical-align: -1px;
+        margin-right: 3px;
     }
-    .work-details{
-        margin: 2px 0 4px 0;
-        padding-left: 15px;
+
+    .about-text {
+        margin-bottom: 2px;
     }
-    .work-details li{
+
+    .card .work-details {
+        margin: 2px 0 3px;
+        padding-left: 13px;
+    }
+
+    .work-details li {
         font-size: 10px;
-        line-height: 1.3;
+        line-height: 1.35;
     }
-    .work-stack{
-        margin: 2px 0 5px 15px;
+
+    .work-stack {
+        margin: 2px 0 3px 12px;
         gap: 2px;
     }
-    .badge{
-        font-size: 9px !important;
+
+    .badge {
+        font-size: 9px;
         padding: 1px 4px;
     }
-    .skill-icon{
-        font-size: 11px;
-        width: 14px;
-        margin-right: 2px;
+
+    .oss-list {
+        margin-top: 4px;
+        gap: 4px;
     }
-    #name{
-        font-size: 15px !important;
-        line-height: 16px !important;
+
+    .oss {
+        font-size: 10px;
+        padding: 2px 7px;
     }
-    #email{
-        font-size: 11px !important;
+
+    .oss .stars {
+        font-size: 9px;
     }
-    #social-links{
-        margin-bottom: 3px;
+
+    .proj-meta {
+        margin: 3px 0 0 12px;
+        gap: 2px 8px;
     }
-    #about > p{
-        font-size: 14px !important;
-    }
-    #year-graduation, #education{
-        font-size: 11px;
-    }
-    #edit-intro{
+
+    .source-link {
         font-size: 10px;
     }
-    hr{
-        margin: 3px 0;
-    }
-    .stroke-transparent, .stroke-transparent-blue{
-        -webkit-text-fill-color: initial;
-    }
-}
-@media screen and (max-width:1090px) {
-    #profile{
-        margin-left: 5%;
-    }
-}
-@media screen and (max-width:850px){
-    #container{
-        display: block;
-    }
-    #profile{
-        width: 90%;
-    }
-    .card{
-        margin: 0 5%;
-        margin-bottom: 30px;
+
+    hr {
+        margin: 6px 0;
     }
 }
