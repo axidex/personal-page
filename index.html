@@ -150,13 +150,27 @@
                         <p class="tags">Yandex<br><span>Software Engineer · Full-time · Hybrid <span class="dim">Jun
                                     2025 — Present</span></span></p>
                         <ul class="work-details">
-                            <li>Developing AppSec features at <a href="https://sourcecraft.dev" target="_blank"
-                                    rel="noopener" class="work-link">SourceCraft</a></li>
+                            <li>Building AppSec features at <a href="https://sourcecraft.dev" target="_blank"
+                                    rel="noopener" class="work-link">SourceCraft</a>, Yandex's developer platform</li>
+                            <li>Built the SCA pipeline end to end — SPDX and CycloneDX SBOM parsing, transitive
+                                dependency graphs and CVE enrichment per repository</li>
+                            <li>Shipped license compliance: license extraction from SBOMs, policy evaluation and
+                                per-repository risk scoring</li>
+                            <li>Extended the scanner platform across SAST, secret scanning, SBOM, IaC and DAST —
+                                Semgrep, CodeQL, Trivy, Grype, Syft, Gitleaks, Kingfisher, Checkov, ZAP — behind one
+                                SARIF ingestion layer</li>
+                            <li>Designed the defect lifecycle: code-flow-hash deduplication, a status state machine and
+                                an activity audit trail, with findings delivered as inline pull request comments</li>
+                            <li>Instrumented the platform with OpenTelemetry tracing and outcome metrics driving
+                                alerting on CI triggers, report uploads and scheduled jobs</li>
                         </ul>
-                        <div class="work-stack"><span class="badge">Go</span><span class="badge">Kotlin</span><span
-                                class="badge">Quarkus</span><span class="badge">Hibernate</span><span
-                                class="badge">MongoDB</span><span class="badge">PostgreSQL</span><span
-                                class="badge">Helm</span><span class="badge">TDD</span><span class="badge">DDD</span>
+                        <div class="work-stack"><span class="badge">Kotlin</span><span class="badge">Go</span><span
+                                class="badge">Quarkus</span><span class="badge">Vert.x</span><span
+                                class="badge">gRPC</span><span class="badge">Hibernate</span><span
+                                class="badge">Liquibase</span><span class="badge">PostgreSQL</span><span
+                                class="badge">MongoDB</span><span class="badge">S3</span><span
+                                class="badge">OpenTelemetry</span><span class="badge">Helm</span><span
+                                class="badge">TDD</span><span class="badge">DDD</span>
                         </div>
                     </li>
                     <li>
@@ -214,7 +228,8 @@
                     <li>
                         <p class="tags"><svg class="icon skill-icon" aria-hidden="true"><use href="#i-shield" /></svg>
                             Security<br><span>SAST (Semgrep, CodeQL, Checkmarx), Secret Scanning (Gitleaks, DeepSecrets,
-                                Kingfisher), SCA (Trivy, Grype, Syft), API Fuzzing</span></p>
+                                Kingfisher), SCA &amp; SBOM (Trivy, Grype, Syft, SPDX, CycloneDX), IaC (Checkov, KICS),
+                                DAST (ZAP), API Fuzzing</span></p>
                     </li>
                     <li>
                         <p class="tags"><svg class="icon skill-icon" aria-hidden="true"><use href="#i-boxes" /></svg>

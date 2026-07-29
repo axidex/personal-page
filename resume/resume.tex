@@ -7,7 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[margin=1.2cm]{geometry}
+\usepackage[margin=1.05cm]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{xcolor}
@@ -67,18 +67,22 @@
 
 %% ---------------------------------------------------------------- summary
 \section*{Summary}
-Software Engineer building AppSec features at Yandex SourceCraft. Background in DevSecOps:
-secret scanning, SAST and API fuzzing at production scale. Upstream contributor to Trivy,
-Grype and Syft. Open to worldwide remote opportunities.
+Software Engineer on Yandex SourceCraft's AppSec platform; DevSecOps background in secret scanning,
+SAST and API fuzzing at production scale. Upstream contributor to Trivy, Grype and Syft. Open to worldwide remote.
 
 %% ---------------------------------------------------------------- experience
 \section*{Experience}
 
 \role{Yandex}{Software Engineer \textperiodcentered{} Full-time \textperiodcentered{} Hybrid}{Jun 2025 --- Present}
 \begin{bullets}
-  \item Developing AppSec features at \href{https://sourcecraft.dev}{SourceCraft}, Yandex's developer platform.
+  \item Building AppSec features at \href{https://sourcecraft.dev}{SourceCraft}, Yandex's developer platform.
+  \item Built the SCA pipeline end to end --- SPDX and CycloneDX SBOM parsing, transitive dependency graphs and CVE enrichment per repository.
+  \item Shipped license compliance: license extraction from SBOMs, policy evaluation and per-repository risk scoring.
+  \item Extended the scanner platform across SAST, secret scanning, SBOM, IaC and DAST (Semgrep, CodeQL, Trivy, Grype, Syft, Gitleaks, Kingfisher, Checkov, ZAP) behind one SARIF ingestion layer.
+  \item Designed the defect lifecycle: code-flow-hash deduplication, a status state machine and an activity audit trail, with findings delivered as inline pull request comments.
+  \item Instrumented the platform with OpenTelemetry tracing and outcome metrics driving alerting on CI triggers, report uploads and scheduled jobs.
 \end{bullets}
-\stack{Go \textperiodcentered{} Kotlin \textperiodcentered{} Quarkus \textperiodcentered{} Hibernate \textperiodcentered{} MongoDB \textperiodcentered{} PostgreSQL \textperiodcentered{} Helm \textperiodcentered{} TDD \textperiodcentered{} DDD}
+\stack{Kotlin \textperiodcentered{} Go \textperiodcentered{} Quarkus \textperiodcentered{} Vert.x \textperiodcentered{} gRPC \textperiodcentered{} Hibernate \textperiodcentered{} Liquibase \textperiodcentered{} PostgreSQL \textperiodcentered{} S3 \textperiodcentered{} OpenTelemetry \textperiodcentered{} Helm}
 
 \role{Sberbank}{DevSecOps \textperiodcentered{} Full-time \textperiodcentered{} On-site}{Aug 2023 --- May 2025}
 \begin{bullets}
@@ -86,11 +90,11 @@ Grype and Syft. Open to worldwide remote opportunities.
   \item Developed and launched a SAST service based on Semgrep and CodeQL.
   \item Designed and developed an API fuzzing tool for RESTful APIs.
 \end{bullets}
-\stack{Go \textperiodcentered{} Python \textperiodcentered{} Groovy \textperiodcentered{} Gin \textperiodcentered{} FastAPI \textperiodcentered{} GORM \textperiodcentered{} SQLAlchemy \textperiodcentered{} gRPC \textperiodcentered{} Kafka \textperiodcentered{} PostgreSQL \textperiodcentered{} Helm \textperiodcentered{} Istio \textperiodcentered{} Prometheus \textperiodcentered{} Grafana \textperiodcentered{} Tempo}
+\stack{Go \textperiodcentered{} Python \textperiodcentered{} Groovy \textperiodcentered{} Gin \textperiodcentered{} FastAPI \textperiodcentered{} gRPC \textperiodcentered{} Kafka \textperiodcentered{} PostgreSQL \textperiodcentered{} Helm \textperiodcentered{} Istio \textperiodcentered{} Prometheus \textperiodcentered{} Grafana}
 
 %% ---------------------------------------------------------------- open source
 \section*{Open Source}
-Merged upstream contributions to the supply-chain security scanners I work with daily ---
+Merged upstream contributions to the supply-chain scanners I use daily ---
 \href{https://github.com/aquasecurity/trivy/pulls?q=is\%3Apr+author\%3Aaxidex}{\textbf{Trivy}} \textcolor{muted}{(37k stars)},
 \href{https://github.com/anchore/grype/pulls?q=is\%3Apr+author\%3Aaxidex}{\textbf{Grype}} \textcolor{muted}{(12k)},
 \href{https://github.com/anchore/syft/pulls?q=is\%3Apr+author\%3Aaxidex}{\textbf{Syft}} \textcolor{muted}{(9k)} ---
@@ -100,9 +104,8 @@ covering SARIF reporting (CVSS vectors, PURLs, fallback descriptions) and Go mod
 \section*{Skills}
 \begin{bullets}
   \item \textbf{Languages \& Frameworks} --- Go, Kotlin, Python; Gin, FastAPI, Quarkus, GORM, Hibernate, SQLAlchemy, gRPC.
-  \item \textbf{Infrastructure} --- Kubernetes, Helm, OpenShift, Docker, Istio, Kafka, PostgreSQL, MongoDB, S3, Redis.
-  \item \textbf{Observability} --- Prometheus, Grafana, Tempo.
-  \item \textbf{Security} --- SAST (Semgrep, CodeQL, Checkmarx), secret scanning (Gitleaks, DeepSecrets, Kingfisher), SCA (Trivy, Grype, Syft), API fuzzing.
+  \item \textbf{Infrastructure \& Observability} --- Kubernetes, Helm, OpenShift, Docker, Istio, Kafka, PostgreSQL, MongoDB, S3, Redis; Prometheus, Grafana, Tempo.
+  \item \textbf{Security} --- SAST (Semgrep, CodeQL, Checkmarx), secret scanning (Gitleaks, DeepSecrets, Kingfisher), SCA \& SBOM (Trivy, Grype, Syft, SPDX, CycloneDX), IaC (Checkov, KICS), DAST (ZAP), API fuzzing.
   \item \textbf{Architecture} --- DDD, TDD, SOLID, ACID, BASE.
 \end{bullets}
 
@@ -110,12 +113,12 @@ covering SARIF reporting (CVSS vectors, PURLs, fallback descriptions) and Go mod
 \section*{Projects}
 
 \project{vercraft-go}{2026}
-  {Language-agnostic CLI that derives a SemVer version straight from git history and \texttt{release/} branches --- no tag zoo, no per-language build plugin. Go port of \href{https://github.com/orchestr7/vercraft}{orchestr7/vercraft}.}
+  {Language-agnostic CLI that derives a SemVer version from git history and \texttt{release/} branches --- no tag zoo, no build plugin. Go port of \href{https://github.com/orchestr7/vercraft}{orchestr7/vercraft}.}
   {https://github.com/axidex/vercraft-go}
 \stack{Go \textperiodcentered{} git \textperiodcentered{} SemVer \textperiodcentered{} CI/CD}
 
 \project{Gradle License Compliance Plugin}{2026}
-  {Gradle plugin that scans dependencies, reads license info from POM files and verifies it against a defined policy. Published to Maven Central.}
+  {Gradle plugin that scans dependencies, reads licenses from POM files and verifies them against a policy. Published to Maven Central.}
   {https://github.com/axidex/gradle-licenses}
 \stack{Kotlin \textperiodcentered{} Gradle \textperiodcentered{} Maven Central}
 
