@@ -315,10 +315,23 @@ code {
     margin: 0;
 }
 
+/* stack badges and the source link share one row */
+.proj-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px 12px;
+    margin: 6px 0 0 20px;
+}
+
+.proj-meta .work-stack {
+    margin: 0;
+}
+
 .source-link {
-    display: inline-block;
     font-size: 14px;
-    margin-left: 20px;
+    margin-left: auto;
 }
 
 @media screen and (max-width: 900px) {
@@ -341,11 +354,8 @@ code {
         padding-left: 0;
     }
 
-    .work-stack {
-        margin-left: 0;
-    }
-
-    .source-link {
+    .work-stack,
+    .proj-meta {
         margin-left: 0;
     }
 }
@@ -400,8 +410,8 @@ code {
     .card {
         border: 1px solid var(--line);
         border-radius: 6px;
-        margin-bottom: 5px;
-        padding: 5px 10px 7px;
+        margin-bottom: 3px;
+        padding: 4px 10px 5px;
         break-inside: avoid;
     }
 
@@ -416,7 +426,7 @@ code {
     }
 
     .card>ul>li+li {
-        margin-top: 5px;
+        margin-top: 4px;
     }
 
     #name {
@@ -500,9 +510,13 @@ code {
         font-size: 9px;
     }
 
+    .proj-meta {
+        margin: 3px 0 0 12px;
+        gap: 2px 8px;
+    }
+
     .source-link {
         font-size: 10px;
-        margin-left: 12px;
     }
 
     hr {

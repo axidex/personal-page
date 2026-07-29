@@ -37,11 +37,12 @@
   \textbf{#1}\hfill{\small\color{muted}#3}\\%
   {\small\itshape #2}\par\vspace{0.1em}}
 
-% \project{name}{year}{description}{url}
-\newcommand{\project}[4]{%
+% \project{name}{year}{description}{stack}{url}
+\newcommand{\project}[5]{%
   \vspace{0.16em}%
   \textbf{#1}\hfill{\small\color{muted}#2}\\%
-  {\small #3\ \href{#4}{source}}\par}
+  {\small #3}\par
+  {\footnotesize\textcolor{muted}{#4}\hfill\href{#5}{source}}\par}
 
 \newcommand{\stack}[1]{\vspace{0.08em}{\footnotesize\color{muted}#1}\par}
 
@@ -76,11 +77,11 @@ SAST and API fuzzing at production scale. Upstream contributor to Trivy, Grype a
 \role{Yandex}{Software Engineer \textperiodcentered{} Full-time \textperiodcentered{} Hybrid}{Jun 2025 --- Present}
 \begin{bullets}
   \item Building AppSec features at \href{https://sourcecraft.dev}{SourceCraft}, Yandex's developer platform.
-  \item Built the SCA pipeline end to end --- SPDX and CycloneDX SBOM parsing, transitive dependency graphs and CVE enrichment per repository.
+  \item Built the SCA pipeline end to end: SPDX/CycloneDX SBOM parsing, transitive dependency graphs, CVE enrichment.
   \item Shipped license compliance: license extraction from SBOMs, policy evaluation and per-repository risk scoring.
   \item Extended the scanner platform across SAST, secret scanning, SBOM, IaC and DAST (Semgrep, CodeQL, Trivy, Grype, Syft, Gitleaks, Kingfisher, Checkov, ZAP) behind one SARIF ingestion layer.
-  \item Designed the defect lifecycle: code-flow-hash deduplication, a status state machine and an activity audit trail, with findings delivered as inline pull request comments.
-  \item Instrumented the platform with OpenTelemetry tracing and outcome metrics driving alerting on CI triggers, report uploads and scheduled jobs.
+  \item Designed the defect lifecycle: code-flow-hash dedup, a status state machine, an audit trail and inline PR comments.
+  \item Instrumented the platform with OpenTelemetry tracing and outcome metrics driving CI and upload alerting.
 \end{bullets}
 \stack{Kotlin \textperiodcentered{} Go \textperiodcentered{} Quarkus \textperiodcentered{} Vert.x \textperiodcentered{} gRPC \textperiodcentered{} Hibernate \textperiodcentered{} Liquibase \textperiodcentered{} PostgreSQL \textperiodcentered{} S3 \textperiodcentered{} OpenTelemetry \textperiodcentered{} Helm}
 
@@ -113,29 +114,33 @@ covering SARIF reporting (CVSS vectors, PURLs, fallback descriptions) and Go mod
 \section*{Projects}
 
 \project{vercraft-go}{2026}
-  {Language-agnostic CLI that derives a SemVer version from git history and \texttt{release/} branches --- no tag zoo, no build plugin. Go port of \href{https://github.com/orchestr7/vercraft}{orchestr7/vercraft}.}
+  {Language-agnostic CLI that derives a SemVer version from git history and \texttt{release/} branches. Go port of \href{https://github.com/orchestr7/vercraft}{orchestr7/vercraft}.}
+  {Go \textperiodcentered{} git \textperiodcentered{} SemVer \textperiodcentered{} CI/CD}
   {https://github.com/axidex/vercraft-go}
-\stack{Go \textperiodcentered{} git \textperiodcentered{} SemVer \textperiodcentered{} CI/CD}
 
 \project{Gradle License Compliance Plugin}{2026}
   {Gradle plugin that scans dependencies, reads licenses from POM files and verifies them against a policy. Published to Maven Central.}
+  {Kotlin \textperiodcentered{} Gradle \textperiodcentered{} Maven Central}
   {https://github.com/axidex/gradle-licenses}
-\stack{Kotlin \textperiodcentered{} Gradle \textperiodcentered{} Maven Central}
 
 \project{Kotlin vs Golang --- benchmark}{2026}
   {CRUD performance comparison of Quarkus (Kotlin) vs Gin (Go) with PostgreSQL, Prometheus and Grafana.}
+  {Kotlin \textperiodcentered{} Go \textperiodcentered{} Quarkus \textperiodcentered{} Gin \textperiodcentered{} PostgreSQL \textperiodcentered{} Prometheus \textperiodcentered{} Grafana}
   {https://github.com/axidex/kotlin-golang-benchmark}
 
 \project{ECIES Educational Application}{2024}
   {Interactive tool for learning the Elliptic Curve Integrated Encryption Scheme.}
+  {Go \textperiodcentered{} Gin \textperiodcentered{} Fyne \textperiodcentered{} Swagger \textperiodcentered{} Docker}
   {https://github.com/axidex/elliptic}
 
 \project{Secret Scanning Engine}{2023}
   {Engine for searching secrets and credentials in source code repositories.}
+  {Python \textperiodcentered{} FastAPI \textperiodcentered{} Prometheus \textperiodcentered{} Docker}
   {https://github.com/axidex/ss-engine}
 
 \project{Retouching Module}{2022}
   {Implementation of the FabSoften paper --- face beautification via dynamic skin smoothing. Python module written in C++.}
+  {C++ \textperiodcentered{} OpenCV \textperiodcentered{} pybind11 \textperiodcentered{} CMake}
   {https://github.com/axidex/Retouching-module}
 
 %% ---------------------------------------------------------------- education
