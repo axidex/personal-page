@@ -1,6 +1,7 @@
 .vscode/
 tailwind/
 *.zip
+.DS_Store
 
 # LaTeX build artifacts
 resume/*.aux
